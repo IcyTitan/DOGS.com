@@ -1,0 +1,22 @@
+﻿RewriteEngine on
+RewriteBase /
+Options All -Indexes
+RewriteCond %{REQUEST_FILENAME} -s [OR]
+RewriteCond %{REQUEST_FILENAME} -l [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^resource/(.*)$ resource/$1 [L]
+RewriteRule ^photo/(.*)$ photo/$1 [L]
+RewriteRule ^pages/(.*)$ pages/$1 [L]
+RewriteRule ^.*$ [NC,L]
+RewriteRule ^.*$ index.php [NC,L]
+AddDefaultCharset utf-8
+AddType 'text/html; charset=utf-8' .html .htm .shtml
+ErrorDocument 403 http://pizdabol.loc/404
+ErrorDocument 404 http://pizdabol.loc/404
+AddDefaultCharset utf-8
+AddCharset utf-8 *
+<IfModule mod_charset.c>
+    CharsetSourceEnc utf-8
+    CharsetDefault utf-8
+</IfModule>
+

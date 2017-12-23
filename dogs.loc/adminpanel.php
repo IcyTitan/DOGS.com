@@ -1,0 +1,1 @@
+<div id="link_admin"><a href="CssEdit">Редактироват файл стилей</a></div>
